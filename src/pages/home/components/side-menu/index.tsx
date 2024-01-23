@@ -1,4 +1,7 @@
 import CustomText from '@/components/custom-text'
+import { Exit } from '@/components/icons/exit'
+import { Home } from '@/components/icons/home'
+import { Profile } from '@/components/icons/profile'
 import { Container, Divisor, LogoWrapper, NavOptions } from './styles'
 
 const Menu = () => {
@@ -16,19 +19,28 @@ const Menu = () => {
       <Divisor />
 
       <NavOptions>
-        <div>
-          <CustomText fontWeight='500'>Home</CustomText>
-        </div>
+        <button>
+          <Home />
+          <CustomText fontWeight='500' marginTop='5px'>
+            Home
+          </CustomText>
+        </button>
 
-        <div>
-          <CustomText fontWeight='500'>Perfil</CustomText>
-        </div>
+        <button>
+          <Profile />
+          <CustomText fontWeight='500' marginTop='5px'>
+            Perfil
+          </CustomText>
+        </button>
 
         <Divisor />
 
-        <div>
-          <CustomText fontWeight='500'>Sair</CustomText>
-        </div>
+        <button>
+          <Exit />
+          <CustomText fontWeight='500' marginTop='5px'>
+            Sair
+          </CustomText>
+        </button>
       </NavOptions>
     </Container>
   )

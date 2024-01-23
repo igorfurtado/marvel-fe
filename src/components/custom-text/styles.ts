@@ -7,10 +7,18 @@ export const StyledText = styled.span<{
   color?: string
   textAlign?: string
   fontWeight?: string
+  marginTop?: string
+  marginBottom?: string
+  marginLeft?: string
+  marginRight?: string
 }>`
   font-family: ${({ fontFamily }) => fontFamily || fonts.family.Epilogue};
   font-size: ${({ fontSize }) => fontSize || fonts.size.p};
   font-weight: ${({ fontWeight }) => fontWeight || fonts.size.p};
   color: ${({ color }) => color || colors.black};
   text-align: ${({ textAlign }) => textAlign || 'center'};
+  margin-top: ${({ marginTop }) => marginTop || 0};
+  margin-bottom: ${({ marginBottom }) => marginBottom || 0};
+  margin-left: ${({ marginLeft }) => marginLeft || 0};
+  margin-right: ${({ marginRight }) => marginRight || 0};
 `

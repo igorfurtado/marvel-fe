@@ -23,25 +23,27 @@ export const Divisor = styled.div`
   background-color: ${colors.divider};
 `
 
-export const NavOptions = styled.button<{
+export const NavOptions = styled.ul<{
   color?: string
 }>`
   flex-direction: column;
-  border: none;
-
-  background-color: transparent;
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   gap: 1rem;
 
-  div {
+  button:first-child {
+    margin-top: 1.5rem;
+  }
+
+  button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background-color: transparent;
     padding: 0 1.5rem;
     color: ${({ color }) => color || colors.black};
-
-    &:first-child {
-      padding-top: 1.5rem;
-    }
+    gap: 1rem;
   }
 `
