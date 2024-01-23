@@ -15,5 +15,10 @@ export const Container = styled.div`
     padding: 1rem;
     border-radius: 1rem;
     background-color: transparent;
+    transition: 0.3s all ease-out;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 `
