@@ -1,7 +1,9 @@
 import CustomText from '@/components/custom-text'
 import { Character } from '@/pages/home/model/application/entities/character'
+import { useSelectedHomeView } from '@/stores/selected-view'
 import { colors } from '@/styles/references'
 import Pagination from '../pagination'
+import ProfileSection from '../profile-content'
 import CardsSection from './components/cards-section'
 import SkeletonCards from './components/skeleton-cards'
 import { CardsWrapper, Container, Divisor, PaginationWrapper } from './styles'
@@ -27,34 +29,42 @@ const HomeContent = ({
   prev,
   jump
 }: HomeContentProps) => {
-  return (
-    <Container>
-      {isLoading ? (
-        <SkeletonCards />
-      ) : totalPages > 0 ? (
-        <CardsSection characters={characters} />
-      ) : (
-        <CardsWrapper>
-          <CustomText color={colors['gray/500']}>
-            Nenhum item para ser exibido.
-          </CustomText>
-        </CardsWrapper>
-      )}
+  const selectedHomeView = useSelectedHomeView()
 
-      <Divisor />
-      {totalPages > 1 && !isLoading && (
-        <PaginationWrapper>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            itemsPerPage={itemsPerPage}
-            next={next}
-            prev={prev}
-            jump={jump}
-          />
-        </PaginationWrapper>
+  return (
+    <>
+      {selectedHomeView === 'home' ? (
+        <Container>
+          {isLoading ? (
+            <SkeletonCards />
+          ) : totalPages > 0 ? (
+            <CardsSection characters={characters} />
+          ) : (
+            <CardsWrapper>
+              <CustomText color={colors['gray/500']}>
+                Nenhum item para ser exibido.
+              </CustomText>
+            </CardsWrapper>
+          )}
+
+          <Divisor />
+          {totalPages > 1 && !isLoading && (
+            <PaginationWrapper>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                itemsPerPage={itemsPerPage}
+                next={next}
+                prev={prev}
+                jump={jump}
+              />
+            </PaginationWrapper>
+          )}
+        </Container>
+      ) : (
+        <ProfileSection />
       )}
-    </Container>
+    </>
   )
 }
 

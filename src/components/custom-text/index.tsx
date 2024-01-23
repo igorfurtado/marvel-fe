@@ -6,7 +6,7 @@ type CustomTextProps = {
   fontFamily?: string
   fontSize?: string
   color?: string
-  textAlign?: string
+  $textalign?: string
   fontWeight?: string
   $margintop?: string
   $marginbottom?: string
@@ -20,7 +20,7 @@ const CustomText = ({
   fontFamily,
   fontSize,
   fontWeight,
-  textAlign,
+  $textalign,
   $marginbottom,
   $marginleft,
   $marginright,
@@ -31,7 +31,7 @@ const CustomText = ({
       fontFamily={fontFamily}
       color={color}
       fontSize={fontSize}
-      textAlign={textAlign}
+      $textalign={$textalign}
       fontWeight={fontWeight}
       $marginbottom={$marginbottom}
       $marginleft={$marginleft}

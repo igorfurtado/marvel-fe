@@ -1,5 +1,6 @@
 import CustomText from '@/components/custom-text'
 import { Character } from '@/pages/home/model/application/entities/character'
+import { useHandleSelectCharacter } from '@/stores/selected-character'
 import { fonts } from '@/styles/references'
 import { Card } from '../styles'
 
@@ -8,19 +9,21 @@ type CharacterCardProps = {
 }
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
+  const handleSelectedCharacter = useHandleSelectCharacter()
+
   return (
-    <Card>
+    <Card onClick={() => handleSelectedCharacter(character)}>
       <img
         src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
       />
 
       <div>
-        <CustomText textAlign='left' fontSize={fonts.size.p} fontWeight='700'>
+        <CustomText $textalign='left' fontSize={fonts.size.p} fontWeight='700'>
           {character.name}
         </CustomText>
 
         <div className='textWrapper'>
-          <CustomText textAlign='left' fontSize={fonts.size.small}>
+          <CustomText $textalign='left' fontSize={fonts.size.small}>
             {character.description || 'No description'}
           </CustomText>
         </div>

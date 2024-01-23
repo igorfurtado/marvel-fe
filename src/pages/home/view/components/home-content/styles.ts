@@ -36,10 +36,11 @@ export const RowContainer = styled.div<{
   gap: 0 0.9375rem;
 `
 
-export const Card = styled.div<{
+export const Card = styled.button<{
   $skeleton?: string
 }>`
   display: flex;
+  border: none;
   width: 100%;
   height: 9.375rem;
   padding: 0.875rem 0.625rem;
@@ -49,6 +50,11 @@ export const Card = styled.div<{
   background-color: ${colors['gray/100']};
   box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   img {
     width: 83px;
