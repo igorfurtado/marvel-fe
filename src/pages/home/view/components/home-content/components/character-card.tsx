@@ -1,6 +1,7 @@
 import CustomText from '@/components/custom-text'
 import { Character } from '@/pages/home/model/application/entities/character'
 import { useHandleSelectCharacter } from '@/stores/selected-character'
+import { useHandleSelectedHomeView } from '@/stores/selected-view'
 import { fonts } from '@/styles/references'
 import { Card } from '../styles'
 
@@ -10,9 +11,15 @@ type CharacterCardProps = {
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
   const handleSelectedCharacter = useHandleSelectCharacter()
+  const handleSelectedHomeView = useHandleSelectedHomeView()
 
   return (
-    <Card onClick={() => handleSelectedCharacter(character)}>
+    <Card
+      onClick={() => {
+        handleSelectedCharacter(character)
+        handleSelectedHomeView('profile')
+      }}
+    >
       <img
         src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
       />
