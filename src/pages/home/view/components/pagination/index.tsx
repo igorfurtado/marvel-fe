@@ -23,6 +23,9 @@ const Pagination = ({
     return pages
   }
 
+  const startPage = Math.max(currentPage - Math.floor(itemsPerPage / 2), 0)
+  const endPage = Math.min(startPage + itemsPerPage - 1, totalPages)
+
   return (
     <div
       style={{
@@ -37,10 +40,7 @@ const Pagination = ({
       </button>
 
       {generatePages()
-        .slice(
-          (currentPage - 1) * itemsPerPage,
-          (currentPage - 1) * itemsPerPage + itemsPerPage
-        )
+        .slice(startPage, endPage)
         .map((page) => (
           <button
             key={page}

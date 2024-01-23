@@ -13,11 +13,11 @@ const usePagination = ({
   const maxPage = Math.ceil(itemsLength / itemsPerPage)
 
   const next = useCallback(() => {
-    setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage))
-  }, [maxPage])
+    setCurrentPage((currentPage) => currentPage + 1)
+  }, [])
 
   const prev = useCallback(() => {
-    setCurrentPage((currentPage) => Math.max(currentPage - 1, 1))
+    setCurrentPage((currentPage) => currentPage - 1 || 1)
   }, [])
 
   const jump = useCallback(
