@@ -4,7 +4,17 @@ import Menu from './components/side-menu'
 import useHome from './hooks/use-home'
 
 const Home = () => {
-  const { searchValue, handleSearch } = useHome()
+  const {
+    characters,
+    numberOfCharacters,
+    searchValue,
+    // isLoading,
+    currentPage,
+    handleSearch,
+    next,
+    prev,
+    jump
+  } = useHome()
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     handleSearch(e.target.value)
@@ -21,7 +31,15 @@ const Home = () => {
         }}
       >
         <SearchArea onChange={onChange} value={searchValue} />
-        <HomeContent />
+        <HomeContent
+          characters={characters}
+          currentPage={currentPage}
+          next={next}
+          prev={prev}
+          jump={jump}
+          totalPages={numberOfCharacters / 10}
+          itemsPerPage={10}
+        />
       </article>
     </section>
   )

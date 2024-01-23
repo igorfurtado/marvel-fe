@@ -5,7 +5,7 @@ import Loading from './pages/loading'
 const Router = () => {
   const LazyChangePassword = lazy(() => import('./pages/reset-password'))
   const LazyLogin = lazy(() => import('./pages/login'))
-  const LazyHome = lazy(() => import('./pages/home'))
+  const LazyHome = lazy(() => import('./pages/home/view'))
   const LazyNotFound = lazy(() => import('./pages/not-found'))
 
   return (
