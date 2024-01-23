@@ -8,7 +8,7 @@ const Home = () => {
     characters,
     numberOfCharacters,
     searchValue,
-    // isLoading,
+    isLoading,
     currentPage,
     handleSearch,
     next,
@@ -34,6 +34,7 @@ const Home = () => {
         <HomeContent
           characters={characters}
           currentPage={currentPage}
+          isLoading={isLoading}
           next={next}
           prev={prev}
           jump={jump}

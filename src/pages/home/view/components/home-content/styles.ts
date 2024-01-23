@@ -1,5 +1,14 @@
 import { colors } from '@/styles/references'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const skeletonAnimation = keyframes`
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -8,6 +17,13 @@ export const Container = styled.div`
   width: 100%;
   padding: 1.5rem 2.5rem;
   gap: 0.9375rem;
+`
+
+export const CardsWrapper = styled.div`
+  display: flex;
+  height: 31.25rem;
+  align-items: center;
+  justify-content: center;
 `
 
 export const RowContainer = styled.div<{
@@ -20,7 +36,9 @@ export const RowContainer = styled.div<{
   gap: 0 0.9375rem;
 `
 
-export const Card = styled.div`
+export const Card = styled.div<{
+  $skeleton?: string
+}>`
   display: flex;
   height: 9.375rem;
   padding: 0.875rem 0.625rem;
@@ -29,6 +47,15 @@ export const Card = styled.div`
   border-radius: 1rem;
   background-color: ${colors['gray/100']};
   box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
+
+  ${(props) =>
+    props.$skeleton === 'true' &&
+    css`
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: ${skeletonAnimation} 2s linear infinite;
+      animation-delay: 1s;
+    `}
 `
 
 export const Divisor = styled.div`
@@ -36,4 +63,11 @@ export const Divisor = styled.div`
   width: 100%;
   margin-top: 2rem;
   background-color: ${colors.divider};
+`
+
+export const PaginationWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

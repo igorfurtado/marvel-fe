@@ -1,3 +1,6 @@
+import { Arrow } from '@/components/icons/arrow'
+import { Container } from './styles'
+
 type PaginationProps = {
   currentPage: number
   totalPages: number
@@ -27,39 +30,43 @@ const Pagination = ({
   const endPage = Math.min(startPage + itemsPerPage - 1, totalPages)
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '16px'
-      }}
-    >
-      <button onClick={prev} disabled={currentPage === 1}>
+    <Container>
+      <button
+        onClick={prev}
+        disabled={currentPage === 1}
+        className='borderButton leftButton'
+      >
+        <Arrow />
         Anterior
       </button>
 
-      {generatePages()
-        .slice(startPage, endPage)
-        .map((page) => (
-          <button
-            key={page}
-            onClick={() => {
-              jump(page)
-            }}
-            style={{
-              margin: '0 4px',
-              fontWeight: currentPage === page ? 'bold' : 'normal'
-            }}
-          >
-            {page}
-          </button>
-        ))}
+      <div className='number-buttons-wrapper'>
+        {generatePages()
+          .slice(startPage, endPage)
+          .map((page) => (
+            <button
+              key={page}
+              className={
+                currentPage === page ? 'numberButton selected' : 'numberButton'
+              }
+              onClick={() => {
+                jump(page)
+              }}
+            >
+              {page}
+            </button>
+          ))}
+      </div>
 
-      <button onClick={next} disabled={currentPage === totalPages}>
+      <button
+        onClick={next}
+        disabled={currentPage === totalPages}
+        className='borderButton rightButton'
+      >
         Próxima
+        <Arrow rotate={180} />
       </button>
-    </div>
+    </Container>
   )
 }
 

@@ -25,8 +25,6 @@ const useHome = () => {
     const dataAccess = new CharacterApiDataAccess()
     const presenter = new CharactersPresenter(dataAccess)
 
-    setIsLoading(true)
-
     presenter
       .getCharacters({
         currentPage,
@@ -39,7 +37,11 @@ const useHome = () => {
           setCharacters(data.result)
         }
       })
-      .finally(() => setIsLoading(false))
+      .finally(() => {
+        if (isMounted) {
+          setIsLoading(false)
+        }
+      })
 
     return () => {
       isMounted = false
