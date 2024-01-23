@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react'
 
 const useHome = () => {
   const [searchValue, setSearchValue] = useState<string>('')
-  const handleSearch = useCallback((sarchValue: string) => {
-    setSearchValue(sarchValue)
+  const handleSearch = useCallback((searchValue: string) => {
+    setSearchValue(searchValue)
   }, [])
 
   return {
