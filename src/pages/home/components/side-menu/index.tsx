@@ -21,14 +21,14 @@ const Menu = () => {
       <NavOptions>
         <button>
           <Home />
-          <CustomText fontWeight='500' marginTop='5px'>
+          <CustomText fontWeight='500' $margintop='5px'>
             Home
           </CustomText>
         </button>
 
         <button>
           <Profile />
-          <CustomText fontWeight='500' marginTop='5px'>
+          <CustomText fontWeight='500' $margintop='5px'>
             Perfil
           </CustomText>
         </button>
@@ -37,7 +37,7 @@ const Menu = () => {
 
         <button>
           <Exit />
-          <CustomText fontWeight='500' marginTop='5px'>
+          <CustomText fontWeight='500' $margintop='5px'>
             Sair
           </CustomText>
         </button>

@@ -8,10 +8,10 @@ type CustomTextProps = {
   color?: string
   textAlign?: string
   fontWeight?: string
-  marginTop?: string
-  marginBottom?: string
-  marginLeft?: string
-  marginRight?: string
+  $margintop?: string
+  $marginbottom?: string
+  $marginleft?: string
+  $marginright?: string
 }
 
 const CustomText = ({
@@ -21,10 +21,10 @@ const CustomText = ({
   fontSize,
   fontWeight,
   textAlign,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  marginTop
+  $marginbottom,
+  $marginleft,
+  $marginright,
+  $margintop
 }: CustomTextProps) => {
   return (
     <StyledText
@@ -33,10 +33,10 @@ const CustomText = ({
       fontSize={fontSize}
       textAlign={textAlign}
       fontWeight={fontWeight}
-      marginBottom={marginBottom}
-      marginLeft={marginLeft}
-      marginRight={marginRight}
-      marginTop={marginTop}
+      $marginbottom={$marginbottom}
+      $marginleft={$marginleft}
+      $marginright={$marginright}
+      $margintop={$margintop}
     >
       {children}
     </StyledText>
