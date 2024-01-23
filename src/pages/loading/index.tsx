@@ -1,4 +1,4 @@
-import CustomText from '../../components/custom-text'
+import CustomText from '@/components/custom-text'
 import { LoadingPage } from './styles'
 
 const Loading = () => {
