@@ -68,17 +68,26 @@ export const Card = styled.div<{
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 0.6rem;
     overflow: hidden;
+    word-break: break-word;
   }
 
   .textWrapper {
     width: 100%;
     height: 100%;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
   ${(props) =>

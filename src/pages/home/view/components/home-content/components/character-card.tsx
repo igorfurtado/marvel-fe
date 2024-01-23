@@ -8,10 +8,12 @@ type CharacterCardProps = {
 }
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
-  console.log(character.thumbnail.path, 'character.thumbnail.path')
   return (
     <Card>
-      <img src={`${character.thumbnail.path}.jpg`} />
+      <img
+        src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+      />
+
       <div>
         <CustomText textAlign='left' fontSize={fonts.size.p} fontWeight='700'>
           {character.name}
@@ -19,7 +21,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
 
         <div className='textWrapper'>
           <CustomText textAlign='left' fontSize={fonts.size.small}>
-            {character.description}
+            {character.description || 'No description'}
           </CustomText>
         </div>
       </div>
