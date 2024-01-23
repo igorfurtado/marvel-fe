@@ -28,6 +28,7 @@ const useHome = () => {
     presenter
       .getCharacters({
         currentPage,
+        searchParam: searchValue,
         itemsPerPage: 10,
         signal: controller.signal
       })
@@ -47,7 +48,7 @@ const useHome = () => {
       isMounted = false
       controller.abort()
     }
-  }, [currentPage])
+  }, [currentPage, searchValue])
 
   return {
     characters,
