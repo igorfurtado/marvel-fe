@@ -25,6 +25,8 @@ const useHome = () => {
     const dataAccess = new CharacterApiDataAccess()
     const presenter = new CharactersPresenter(dataAccess)
 
+    setIsLoading(true)
+
     presenter
       .getCharacters({
         currentPage,
