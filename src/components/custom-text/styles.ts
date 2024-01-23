@@ -6,9 +6,11 @@ export const StyledText = styled.span<{
   fontSize?: string
   color?: string
   textAlign?: string
+  fontWeight?: string
 }>`
   font-family: ${({ fontFamily }) => fontFamily || fonts.family.Epilogue};
   font-size: ${({ fontSize }) => fontSize || fonts.size.p};
+  font-weight: ${({ fontWeight }) => fontWeight || fonts.size.p};
   color: ${({ color }) => color || colors.black};
   text-align: ${({ textAlign }) => textAlign || 'center'};
 `
