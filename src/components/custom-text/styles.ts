@@ -14,7 +14,7 @@ export const StyledText = styled.span<{
 }>`
   font-family: ${({ fontFamily }) => fontFamily || fonts.family.Epilogue};
   font-size: ${({ fontSize }) => fontSize || fonts.size.p};
-  font-weight: ${({ fontWeight }) => fontWeight || fonts.size.p};
+  font-weight: ${({ fontWeight }) => fontWeight || '400'};
   color: ${({ color }) => color || colors.black};
   text-align: ${({ textAlign }) => textAlign || 'center'};
   margin-top: ${({ $margintop }) => $margintop || 0};

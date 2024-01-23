@@ -40,6 +40,7 @@ export const Card = styled.div<{
   $skeleton?: string
 }>`
   display: flex;
+  width: 100%;
   height: 9.375rem;
   padding: 0.875rem 0.625rem;
   align-items: flex-start;
@@ -47,6 +48,38 @@ export const Card = styled.div<{
   border-radius: 1rem;
   background-color: ${colors['gray/100']};
   box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+
+  img {
+    width: 83px;
+    height: 119px;
+    border-radius: 15px;
+    object-fit: cover;
+
+    @media (max-width: 1100px) {
+      width: 60px;
+    }
+  }
+
+  div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.625rem;
+    overflow: hidden;
+  }
+
+  .textWrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
   ${(props) =>
     props.$skeleton === 'true' &&

@@ -23,6 +23,11 @@ export const Input = styled.input`
   font-size: ${fonts.size.small};
   color: ${colors['blue/200']};
   margin-top: 4px;
+
+  &::placeholder {
+    color: ${colors['gray/500']};
+    opacity: 0.6;
+  }
 `
 
 export const InputIcon = styled.div`

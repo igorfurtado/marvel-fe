@@ -21,7 +21,7 @@ export default class CharacterApiDataAccess implements CharactersDataAccess {
     signal?: AbortSignal
   }): Promise<CharacterResponse> {
     try {
-      const url = `https://gateway.marvel.com/v1/public/characters?limit=${itemsPerPage}&offset=${(currentPage - 1) * itemsPerPage}${searchParam && `&nameStartsWith=${searchParam}`}&apikey=${this._apiKey}`
+      const url = `https://gateway.marvel.com/v1/public/characters?limit=${itemsPerPage}&offset=${(currentPage - 1) * itemsPerPage}${searchParam && `&nameStartsWith=${searchParam}`}&orderBy=name&apikey=${this._apiKey}`
 
       const configRequest = {
         method: 'GET',

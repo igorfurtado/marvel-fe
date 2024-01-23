@@ -1,4 +1,6 @@
+import CustomText from '@/components/custom-text'
 import { Character } from '@/pages/home/model/application/entities/character'
+import { colors } from '@/styles/references'
 import Pagination from '../pagination'
 import CardsSection from './components/cards-section'
 import SkeletonCards from './components/skeleton-cards'
@@ -32,7 +34,11 @@ const HomeContent = ({
       ) : totalPages > 0 ? (
         <CardsSection characters={characters} />
       ) : (
-        <CardsWrapper>Nenhum item para ser exibido.</CardsWrapper>
+        <CardsWrapper>
+          <CustomText color={colors['gray/500']}>
+            Nenhum item para ser exibido.
+          </CustomText>
+        </CardsWrapper>
       )}
 
       <Divisor />
