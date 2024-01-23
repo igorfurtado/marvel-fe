@@ -2,8 +2,11 @@ import { colors } from '@/styles/references'
 import styled from 'styled-components'
 
 export const Container = styled.nav`
-  position: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
+  height: 100%;
   width: 16rem;
   background-color: ${colors.white};
   box-shadow: 6px 0px 18px 0px rgba(0, 0, 0, 0.06);

@@ -20,4 +20,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
     color: ${colors.black}
   }
+
+  section, main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
 `
