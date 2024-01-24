@@ -1,5 +1,6 @@
 import CustomInput from '@/components/custom-input'
 import { Search } from '@/components/icons/search'
+import { useSelectedHomeView } from '@/stores/selected-view'
 import { Container } from './styles'
 
 type SearchAreaProps = {
@@ -8,14 +9,18 @@ type SearchAreaProps = {
 }
 
 const SearchArea = ({ onChange, value }: SearchAreaProps) => {
+  const selectedHomeView = useSelectedHomeView()
+
   return (
     <Container>
-      <CustomInput
-        Icon={Search}
-        placeHolder='Busque um agente'
-        onChange={onChange}
-        value={value}
-      />
+      {selectedHomeView === 'home' && (
+        <CustomInput
+          Icon={Search}
+          placeHolder='Busque um agente'
+          onChange={onChange}
+          value={value}
+        />
+      )}
     </Container>
   )
 }

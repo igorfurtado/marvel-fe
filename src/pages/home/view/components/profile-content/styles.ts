@@ -52,7 +52,7 @@ export const ProfileNav = styled.nav<{
 `
 
 export const NavIndicator = styled.div<{
-  translation: number
+  $translation: number
   width: number
 }>`
   height: 2px;
@@ -60,6 +60,6 @@ export const NavIndicator = styled.div<{
   background-color: ${colors['blue/600']};
   transition: transform 0.3s ease-out;
   transform-origin: bottom;
-  transform: ${(props) => `translateX(${props.translation}px)`};
+  transform: ${(props) => `translateX(${props.$translation}px)`};
   margin-top: 1rem;
 `

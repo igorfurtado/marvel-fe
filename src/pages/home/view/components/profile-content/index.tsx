@@ -1,61 +1,19 @@
 import CustomText from '@/components/custom-text'
-import { useSelectedCharacter } from '@/stores/selected-character'
-import { useHandleSelectedHomeView } from '@/stores/selected-view'
 import { colors, fonts } from '@/styles/references'
-import { useEffect, useRef, useState } from 'react'
+import useProfile from './hooks/use-profile'
 import { Container, NavIndicator, ProfileNav } from './styles'
 
-type IProfileNav = 'visãoGeral' | 'teams' | 'powers' | 'species' | 'authors'
-
 const ProfileSection = () => {
-  const [selectedNavSection, setSelectedNavSection] =
-    useState<IProfileNav>('visãoGeral')
-  const selectedCharacter = useSelectedCharacter()
-  const handleSelectedHomeView = useHandleSelectedHomeView()
-  const navRef = useRef<HTMLDivElement | null>(null)
-  const [selectedNavItemWidth, setSelectedNavItemWidth] = useState<
-    number | null
-  >(null)
-
-  const navItems = [
-    { id: 'visãoGeral', label: 'Visão Geral' },
-    { id: 'teams', label: 'Teams' },
-    { id: 'powers', label: 'Powers' },
-    { id: 'species', label: 'Species' },
-    { id: 'authors', label: 'Authors' }
-  ] as {
-    id: IProfileNav
-    label: string
-  }[]
-
-  const idsArray = navItems.map((item) => item.id)
-
-  useEffect(() => {
-    if (navRef.current) {
-      const selectedNavItem = navRef.current.querySelector('.selected')
-      if (selectedNavItem) {
-        setSelectedNavItemWidth(selectedNavItem.clientWidth)
-      }
-    }
-  }, [selectedNavSection])
-
-  const calculateTranslation = () => {
-    let translation = 0
-
-    for (let i = 0; i < idsArray.length; i++) {
-      if (idsArray[i] === selectedNavSection) {
-        break
-      }
-
-      const item = navRef.current?.querySelector(`[id="${idsArray[i]}"]`)
-
-      if (item) {
-        translation += item.clientWidth + 24
-      }
-    }
-
-    return translation
-  }
+  const {
+    navRef,
+    navItems,
+    selectedNavItemWidth,
+    selectedCharacter,
+    selectedNavSection,
+    handleSelectNavSection,
+    calculateTranslation,
+    handleSelectedHomeView
+  } = useProfile()
 
   return (
     <Container>
@@ -88,7 +46,7 @@ const ProfileSection = () => {
                   id={item.id}
                   key={item.id}
                   onClick={() => {
-                    setSelectedNavSection(item.id)
+                    handleSelectNavSection(item.id)
                   }}
                   className={selectedNavSection === item.id ? 'selected' : ''}
                 >
@@ -106,7 +64,7 @@ const ProfileSection = () => {
               ))}
             </ProfileNav>
             <NavIndicator
-              translation={calculateTranslation()}
+              $translation={calculateTranslation()}
               width={selectedNavItemWidth || 100}
             />
           </div>
