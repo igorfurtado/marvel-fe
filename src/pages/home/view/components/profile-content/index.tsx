@@ -3,8 +3,8 @@ import { colors, fonts } from '@/styles/references'
 import Authors from './components/authors'
 import Comics from './components/comics'
 import General from './components/general'
-import Powers from './components/powers'
-import Species from './components/species'
+import Series from './components/series'
+import Stories from './components/stories'
 import useProfile from './hooks/use-profile'
 import {
   Container,
@@ -29,8 +29,8 @@ const ProfileSection = () => {
   const content = {
     visãoGeral: <General />,
     comics: <Comics />,
-    powers: <Powers />,
-    species: <Species />,
+    series: <Series />,
+    stories: <Stories />,
     authors: <Authors />
   }
 

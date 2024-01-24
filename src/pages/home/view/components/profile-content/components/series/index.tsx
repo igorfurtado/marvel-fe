@@ -3,22 +3,22 @@ import { useSelectedCharacter } from '@/stores/selected-character'
 import { colors, fonts } from '@/styles/references'
 import { Container } from '../styles'
 
-const Comics = () => {
+const Series = () => {
   const selectedCharacter = useSelectedCharacter()
 
   return (
     <Container>
-      {selectedCharacter!.comics?.items?.length > 0 ? (
+      {selectedCharacter!.series?.items?.length > 0 ? (
         <ul>
-          {selectedCharacter?.comics.items.map((comic) => {
+          {selectedCharacter?.series.items.map((serie) => {
             return (
-              <li key={comic.name}>
+              <li key={serie.name}>
                 <CustomText
                   color={colors['gray/500']}
                   fontFamily='Inter'
                   fontWeight='600'
                 >
-                  • {comic.name}
+                  • {serie.name}
                 </CustomText>
               </li>
             )
@@ -37,4 +37,4 @@ const Comics = () => {
   )
 }
 
-export default Comics
+export default Series
