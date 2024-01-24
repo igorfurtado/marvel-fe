@@ -1,7 +1,7 @@
 import CustomText from '@/components/custom-text'
 import { colors, fonts } from '@/styles/references'
 import useProfile from './hooks/use-profile'
-import { Container, NavIndicator, ProfileNav } from './styles'
+import { Container, Divisor, NavIndicator, ProfileNav } from './styles'
 
 const ProfileSection = () => {
   const {
@@ -67,6 +67,7 @@ const ProfileSection = () => {
               $translation={calculateTranslation()}
               width={selectedNavItemWidth || 100}
             />
+            <Divisor /> 
           </div>
         </>
       ) : (

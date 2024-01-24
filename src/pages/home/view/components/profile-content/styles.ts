@@ -63,3 +63,9 @@ export const NavIndicator = styled.div<{
   transform: ${(props) => `translateX(${props.$translation}px)`};
   margin-top: 1rem;
 `
+
+export const Divisor = styled.div`
+  height: 0.0625rem;
+  width: 100%;
+  background-color: ${colors.divider};
+`
