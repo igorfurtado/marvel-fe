@@ -48,7 +48,7 @@ const HomeContent = ({
           )}
 
           <Divisor />
-          {totalPages > 1 && !isLoading && (
+          {totalPages > 1 && (
             <PaginationWrapper>
               <Pagination
                 currentPage={currentPage}
