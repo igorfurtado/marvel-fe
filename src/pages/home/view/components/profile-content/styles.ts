@@ -69,3 +69,11 @@ export const Divisor = styled.div`
   width: 100%;
   background-color: ${colors.divider};
 `
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+`

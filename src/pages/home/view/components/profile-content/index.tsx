@@ -1,7 +1,18 @@
 import CustomText from '@/components/custom-text'
 import { colors, fonts } from '@/styles/references'
+import Authors from './components/authors'
+import General from './components/general'
+import Powers from './components/powers'
+import Species from './components/species'
+import Teams from './components/teams'
 import useProfile from './hooks/use-profile'
-import { Container, Divisor, NavIndicator, ProfileNav } from './styles'
+import {
+  Container,
+  ContentWrapper,
+  Divisor,
+  NavIndicator,
+  ProfileNav
+} from './styles'
 
 const ProfileSection = () => {
   const {
@@ -14,6 +25,14 @@ const ProfileSection = () => {
     calculateTranslation,
     handleSelectedHomeView
   } = useProfile()
+
+  const content = {
+    visãoGeral: <General />,
+    teams: <Teams />,
+    powers: <Powers />,
+    species: <Species />,
+    authors: <Authors />
+  }
 
   return (
     <Container>
@@ -39,7 +58,7 @@ const ProfileSection = () => {
             </CustomText>
           </CustomText>
 
-          <div>
+          <div style={{ width: '100%' }}>
             <ProfileNav ref={navRef}>
               {navItems.map((item) => (
                 <a
@@ -67,8 +86,10 @@ const ProfileSection = () => {
               $translation={calculateTranslation()}
               width={selectedNavItemWidth || 100}
             />
-            <Divisor /> 
+            <Divisor />
           </div>
+
+          <ContentWrapper>{content[selectedNavSection]}</ContentWrapper>
         </>
       ) : (
         <button onClick={() => handleSelectedHomeView('home')}>
