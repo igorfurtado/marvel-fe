@@ -1,10 +1,10 @@
 import CustomText from '@/components/custom-text'
 import { colors, fonts } from '@/styles/references'
 import Authors from './components/authors'
+import Comics from './components/comics'
 import General from './components/general'
 import Powers from './components/powers'
 import Species from './components/species'
-import Teams from './components/teams'
 import useProfile from './hooks/use-profile'
 import {
   Container,
@@ -28,7 +28,7 @@ const ProfileSection = () => {
 
   const content = {
     visãoGeral: <General />,
-    teams: <Teams />,
+    comics: <Comics />,
     powers: <Powers />,
     species: <Species />,
     authors: <Authors />

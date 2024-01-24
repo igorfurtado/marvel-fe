@@ -12,7 +12,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: ${colors.white};
-    color: ${colors.black}
+    color: ${colors.black};
+    overflow: hidden;
   }
 
   button {
@@ -23,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 
   section, main {
     display: flex;
+    overflow: hidden;
     height: 100vh;
     width: 100%;
   }

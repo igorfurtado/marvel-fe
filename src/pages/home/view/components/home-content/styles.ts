@@ -17,6 +17,7 @@ export const Container = styled.div`
   width: 100%;
   padding: 1.5rem 2.5rem;
   gap: 0.9375rem;
+  overflow: hidden;
 `
 
 export const CardsWrapper = styled.div`

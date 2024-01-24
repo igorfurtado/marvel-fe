@@ -9,6 +9,7 @@ export const Container = styled.div`
   height: 100%;
   padding: 2.5rem;
   gap: 1.5rem;
+  overflow: hidden;
 
   button {
     display: flex;
@@ -76,4 +77,5 @@ export const ContentWrapper = styled.div`
   justify-content: flex-start;
   height: 100%;
   width: 100%;
+  overflow: auto;
 `

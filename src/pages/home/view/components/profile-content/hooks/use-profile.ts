@@ -2,7 +2,7 @@ import { useSelectedCharacter } from '@/stores/selected-character'
 import { useHandleSelectedHomeView } from '@/stores/selected-view'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-type IProfileNav = 'visãoGeral' | 'teams' | 'powers' | 'species' | 'authors'
+type IProfileNav = 'visãoGeral' | 'comics' | 'powers' | 'species' | 'authors'
 
 const useProfile = () => {
   const [selectedNavSection, setSelectedNavSection] =
@@ -20,7 +20,7 @@ const useProfile = () => {
 
   const navItems = [
     { id: 'visãoGeral', label: 'Visão Geral' },
-    { id: 'teams', label: 'Teams' },
+    { id: 'comics', label: 'Comics' },
     { id: 'powers', label: 'Powers' },
     { id: 'species', label: 'Species' },
     { id: 'authors', label: 'Authors' }
