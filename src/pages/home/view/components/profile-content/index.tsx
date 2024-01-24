@@ -1,7 +1,7 @@
 import CustomText from '@/components/custom-text'
 import { colors, fonts } from '@/styles/references'
-import Authors from './components/authors'
 import Comics from './components/comics'
+import Events from './components/events'
 import General from './components/general'
 import Series from './components/series'
 import Stories from './components/stories'
@@ -31,7 +31,7 @@ const ProfileSection = () => {
     comics: <Comics />,
     series: <Series />,
     stories: <Stories />,
-    authors: <Authors />
+    events: <Events />
   }
 
   return (
