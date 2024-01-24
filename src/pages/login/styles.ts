@@ -54,11 +54,21 @@ export const BuildingWrapper = styled.div<{
 
 export const FormBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 2rem;
   display: flex;
   min-width: 23.75rem;
   height: 27.0625rem;
   background-color: ${colors.white};
   border-radius: 1.75rem;
+
+  span {
+    &:first-child {
+      white-space: nowrap;
+    }
+
+    line-height: 1.27rem;
+  }
 `

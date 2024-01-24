@@ -1,3 +1,5 @@
+import CustomText from '@/components/custom-text'
+import { colors } from '@/styles/references'
 import { BuildingWrapper, Container, Content, FormBox, Header } from './styles'
 
 const Login = () => {
@@ -9,7 +11,29 @@ const Login = () => {
 
       <Content>
         <BuildingWrapper url='src/assets/building-image.svg'></BuildingWrapper>
-        <FormBox></FormBox>
+        <FormBox>
+          <CustomText
+            color={colors['blue/600']}
+            fontSize='36px'
+            fontWeight='700'
+          >
+            Bem-vindo
+            <CustomText
+              color={colors['orange/500']}
+              fontSize='36px'
+              fontWeight='700'
+            >
+              .
+            </CustomText>
+          </CustomText>
+          <CustomText
+            $textalign='left'
+            $margintop='1rem'
+            color={colors['gray/500']}
+          >
+            Informe as suas credenciais de acesso ao portal
+          </CustomText>
+        </FormBox>
       </Content>
     </Container>
   )
