@@ -2,24 +2,26 @@ import CustomText from '@/components/custom-text'
 import { Exit } from '@/components/icons/exit'
 import { Home } from '@/components/icons/home'
 import { Profile } from '@/components/icons/profile'
+import useLogin from '@/hooks/use-login'
 import {
   useHandleSelectedHomeView,
   useSelectedHomeView
 } from '@/stores/selected-view'
 import { colors } from '@/styles/references'
+import { useNavigate } from 'react-router-dom'
 import { Container, Divisor, LogoWrapper, NavOptions } from './styles'
 
 const Menu = () => {
   const selectedHomeView = useSelectedHomeView()
   const handleSelectedHomeView = useHandleSelectedHomeView()
 
-  // const { signOut } = useLogin()
-  // const navigate = useNavigate()
+  const { signOut } = useLogin()
+  const navigate = useNavigate()
 
-  // const logOut = () => {
-  //   signOut()
-  //   navigate('/login')
-  // }
+  const logOut = () => {
+    signOut()
+    navigate('/login')
+  }
 
   return (
     <Container>
@@ -76,10 +78,10 @@ const Menu = () => {
         <Divisor />
 
         <button
-        // onClick={(event) => {
-        //   event?.preventDefault()
-        //   logOut()
-        // }}
+          onClick={(event) => {
+            event?.preventDefault()
+            logOut()
+          }}
         >
           <Exit />
           <CustomText fontWeight='500' $margintop='5px'>

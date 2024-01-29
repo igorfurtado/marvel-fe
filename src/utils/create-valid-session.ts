@@ -1,5 +1,4 @@
 import { UserSession } from '@/types/auth-session'
-import jwt from 'jsonwebtoken'
 
 const secretKey =
   'wZTlW0rzeHPXDYZ0PiQ5qELI+eVaR1aaLoyzOMSMXkAXleCjglJJBwrUdE4nQ/ist7KpdULgnIPzbQQImBtRnGaOaECF97G08'
@@ -20,17 +19,13 @@ export const createValidSession = ({
     email
   }
 
-  const options = {
-    expiresIn: '1h'
-  }
-
-  const token = jwt.sign(payload, secretKey, options)
+  const token = secretKey
 
   return {
     user: {
-      userId,
-      name,
-      email
+      userId: payload.userId,
+      name: name,
+      email: payload.email
     },
     accessToken: token
   } as UserSession
