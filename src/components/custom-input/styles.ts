@@ -8,6 +8,19 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   background-color: transparent;
+
+  button {
+    &.icon {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      right: 0;
+      margin-right: 1rem;
+    }
+  }
 `
 
 export const Input = styled.input<{

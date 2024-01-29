@@ -2,6 +2,7 @@ import Button from '@/components/custom-button'
 import CustomInput from '@/components/custom-input'
 import CustomText from '@/components/custom-text'
 import { Doubt } from '@/components/icons/doubt'
+import { Eye } from '@/components/icons/eye'
 import { Next } from '@/components/icons/next'
 import { colors } from '@/styles/references'
 import { useState } from 'react'
@@ -18,6 +19,7 @@ import {
 const Login = () => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [showPassword, setShowPassword] = useState<boolean>(false)
 
   return (
     <Container>
@@ -64,6 +66,11 @@ const Login = () => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeHolder='Informe sua senha'
                 $login
+                IconAfter={() => <Eye />}
+                iconClick={() =>
+                  setShowPassword((currentValue) => !currentValue)
+                }
+                type={!showPassword ? 'password' : 'text'}
               />
             </div>
 

@@ -4,9 +4,13 @@ import { Container, Input } from './styles'
 type CustomInputProps = {
   IconBefore?: ElementType
   IconAfter?: ElementType
+  iconClick?: () => void
   placeHolder?: string
   value: string
   $login?: boolean
+  type?: React.HTMLInputTypeAttribute | undefined
+  onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
+  onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -16,6 +20,10 @@ const CustomInput = ({
   placeHolder,
   value,
   $login,
+  type,
+  iconClick,
+  onBlur,
+  onFocus,
   onChange
 }: CustomInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -35,8 +43,19 @@ const CustomInput = ({
         value={value}
         onChange={onChange}
         $login={$login}
+        type={type}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
-      {IconAfter && <IconAfter />}
+      <button
+        className='icon'
+        onClick={(event) => {
+          event?.preventDefault()
+          iconClick?.()
+        }}
+      >
+        {IconAfter && <IconAfter />}
+      </button>
     </Container>
   )
 }

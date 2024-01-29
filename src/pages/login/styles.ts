@@ -81,17 +81,14 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
 
-  div {
+  > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-  }
-
-  button {
-    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 `
 
