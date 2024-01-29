@@ -1,4 +1,6 @@
+import useLogin from '@/hooks/use-login'
 import { useCallback, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Character } from '../../model/application/entities/character'
 import CharacterApiDataAccess from '../../model/infrastructure/api-data-access'
 import CharactersPresenter from '../../presenter/character-presenter'
@@ -17,6 +19,10 @@ const useHome = () => {
     itemsLength: numberOfCharacters,
     itemsPerPage: 10
   })
+
+  const { getCurrentUser } = useLogin()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     let isMounted = true
@@ -51,6 +57,12 @@ const useHome = () => {
       controller.abort()
     }
   }, [currentPage, searchValue])
+
+  useEffect(() => {
+    if (!getCurrentUser) {
+      navigate('/login')
+    }
+  }, [getCurrentUser, navigate])
 
   return {
     characters,

@@ -60,7 +60,7 @@ export const FormBox = styled.div`
   padding: 2rem;
   display: flex;
   min-width: 23.75rem;
-  height: 27.0625rem;
+  min-height: 27.0625rem;
   background-color: ${colors.white};
   border-radius: 1.75rem;
 
@@ -87,7 +87,7 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    /* gap: 1rem; */
     margin-bottom: 0.75rem;
   }
 `

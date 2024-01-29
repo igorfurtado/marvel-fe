@@ -9,7 +9,7 @@ interface SessionService {
 
 export default class SessionServiceBrowserStorage implements SessionService {
   getCurrentUser(): UserSession | null {
-    const jsonString = localStorage.getItem(AUTH_USER_SESSION) as string
+    const jsonString = sessionStorage.getItem(AUTH_USER_SESSION) as string
     const data = JSON.parse(jsonString)
     return data as UserSession
   }

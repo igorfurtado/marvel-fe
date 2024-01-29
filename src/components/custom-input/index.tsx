@@ -1,5 +1,7 @@
+import { colors, fonts } from '@/styles/references'
 import { ElementType, useRef } from 'react'
-import { Container, Input } from './styles'
+import CustomText from '../custom-text'
+import { Container, ErrorText, Input } from './styles'
 
 type CustomInputProps = {
   IconBefore?: ElementType
@@ -9,6 +11,7 @@ type CustomInputProps = {
   value: string
   $login?: boolean
   type?: React.HTMLInputTypeAttribute | undefined
+  errorText?: string
   onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
   onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -21,6 +24,7 @@ const CustomInput = ({
   value,
   $login,
   type,
+  errorText,
   iconClick,
   onBlur,
   onFocus,
@@ -35,28 +39,42 @@ const CustomInput = ({
   }
 
   return (
-    <Container onClick={handleIconClick}>
-      {IconBefore && <IconBefore />}
-      <Input
-        ref={inputRef}
-        placeholder={placeHolder}
-        value={value}
-        onChange={onChange}
-        $login={$login}
-        type={type}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-      <button
-        className='icon'
-        onClick={(event) => {
-          event?.preventDefault()
-          iconClick?.()
-        }}
-      >
-        {IconAfter && <IconAfter />}
-      </button>
-    </Container>
+    <>
+      <Container onClick={handleIconClick}>
+        {IconBefore && <IconBefore />}
+        <Input
+          ref={inputRef}
+          placeholder={placeHolder}
+          value={value}
+          onChange={onChange}
+          $login={$login}
+          type={type}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
+        <button
+          className='icon'
+          onClick={(event) => {
+            event?.preventDefault()
+            iconClick?.()
+          }}
+        >
+          {IconAfter && <IconAfter />}
+        </button>
+      </Container>
+
+      {errorText && (
+        <ErrorText>
+          <CustomText
+            $margintop='0.125rem'
+            fontSize={fonts.size.superSmall}
+            color={colors['orange/500']}
+          >
+            teste
+          </CustomText>
+        </ErrorText>
+      )}
+    </>
   )
 }
 

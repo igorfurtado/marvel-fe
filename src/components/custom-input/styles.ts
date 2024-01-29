@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
   position: relative;
   display: flex;
+
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -19,6 +20,7 @@ export const Container = styled.div`
       background-color: transparent;
       right: 0;
       margin-right: 1rem;
+      margin-top: 1rem;
     }
   }
 `
@@ -49,7 +51,7 @@ export const Input = styled.input<{
   ${({ $login }) =>
     $login &&
     css`
-      margin-top: 0px;
+      margin-top: 1rem;
       height: 3.5625rem;
       border: 1px solid #b7b7b7;
       border-radius: 0.625rem;
@@ -68,4 +70,11 @@ export const Input = styled.input<{
 
 export const InputIcon = styled.div`
   position: relative;
+`
+
+export const ErrorText = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
 `

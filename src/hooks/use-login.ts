@@ -14,9 +14,12 @@ const useLogin = () => {
     authSession.createSession(session)
   }
 
+  const getCurrentUser = authSession.getCurrentUser()
+
   return {
     signOut,
-    signIn
+    signIn,
+    getCurrentUser
   }
 }
 
