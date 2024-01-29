@@ -15,7 +15,7 @@ const SearchArea = ({ onChange, value }: SearchAreaProps) => {
     <Container>
       {selectedHomeView === 'home' && (
         <CustomInput
-          Icon={Search}
+          IconBefore={Search}
           placeHolder='Busque um agente'
           onChange={onChange}
           value={value}

@@ -1,8 +1,24 @@
+import Button from '@/components/custom-button'
+import CustomInput from '@/components/custom-input'
 import CustomText from '@/components/custom-text'
+import { Doubt } from '@/components/icons/doubt'
+import { Next } from '@/components/icons/next'
 import { colors } from '@/styles/references'
-import { BuildingWrapper, Container, Content, FormBox, Header } from './styles'
+import { useState } from 'react'
+import {
+  BuildingWrapper,
+  Container,
+  Content,
+  ForgotPasswordBox,
+  Form,
+  FormBox,
+  Header
+} from './styles'
 
 const Login = () => {
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
   return (
     <Container>
       <Header>
@@ -28,11 +44,39 @@ const Login = () => {
           </CustomText>
           <CustomText
             $textalign='left'
-            $margintop='1rem'
+            $margintop='1.5rem'
             color={colors['gray/500']}
           >
-            Informe as suas credenciais de acesso ao portal
+            informe as suas credenciais de acesso ao portal
           </CustomText>
+
+          <Form>
+            <div>
+              <CustomInput
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeHolder='nome@email.com'
+                $login
+              />
+
+              <CustomInput
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeHolder='Informe sua senha'
+                $login
+              />
+            </div>
+
+            <Button title='entrar' iconAfter={Next} />
+          </Form>
+          <ForgotPasswordBox>
+            <button>
+              <Doubt />
+              <CustomText fontSize='11px' color='#F21A05' fontWeight='400'>
+                Esqueceu a senha?
+              </CustomText>
+            </button>
+          </ForgotPasswordBox>
         </FormBox>
       </Content>
     </Container>

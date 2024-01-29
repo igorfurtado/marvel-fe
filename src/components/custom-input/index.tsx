@@ -2,16 +2,20 @@ import { ElementType, useRef } from 'react'
 import { Container, Input } from './styles'
 
 type CustomInputProps = {
-  Icon?: ElementType
+  IconBefore?: ElementType
+  IconAfter?: ElementType
   placeHolder?: string
   value: string
+  $login?: boolean
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const CustomInput = ({
-  Icon,
+  IconBefore,
+  IconAfter,
   placeHolder,
   value,
+  $login,
   onChange
 }: CustomInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -24,13 +28,15 @@ const CustomInput = ({
 
   return (
     <Container onClick={handleIconClick}>
-      {Icon && <Icon />}
+      {IconBefore && <IconBefore />}
       <Input
         ref={inputRef}
         placeholder={placeHolder}
         value={value}
         onChange={onChange}
+        $login={$login}
       />
+      {IconAfter && <IconAfter />}
     </Container>
   )
 }

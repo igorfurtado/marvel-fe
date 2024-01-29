@@ -72,3 +72,46 @@ export const FormBox = styled.div`
     line-height: 1.27rem;
   }
 `
+
+export const Form = styled.form`
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  button {
+    margin-top: 0.75rem;
+  }
+`
+
+export const ForgotPasswordBox = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 1.5rem;
+    border: none;
+    background-color: transparent;
+
+    svg {
+      margin-bottom: 0.125rem;
+    }
+  }
+`
