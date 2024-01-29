@@ -6,6 +6,9 @@ import { Eye } from '@/components/icons/eye'
 import { Next } from '@/components/icons/next'
 import { colors } from '@/styles/references'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import useLogin from '@/hooks/use-login'
 import {
   BuildingWrapper,
   Container,
@@ -20,6 +23,13 @@ const Login = () => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [showPassword, setShowPassword] = useState<boolean>(false)
+  const { signIn } = useLogin()
+  const navigate = useNavigate()
+
+  const login = () => {
+    signIn({ email, password })
+    navigate('/home')
+  }
 
   return (
     <Container>
@@ -52,7 +62,12 @@ const Login = () => {
             informe as suas credenciais de acesso ao portal
           </CustomText>
 
-          <Form>
+          <Form
+            onSubmit={(event) => {
+              event?.preventDefault()
+              login()
+            }}
+          >
             <div>
               <CustomInput
                 value={email}

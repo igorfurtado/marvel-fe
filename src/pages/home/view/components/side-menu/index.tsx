@@ -13,6 +13,14 @@ const Menu = () => {
   const selectedHomeView = useSelectedHomeView()
   const handleSelectedHomeView = useHandleSelectedHomeView()
 
+  // const { signOut } = useLogin()
+  // const navigate = useNavigate()
+
+  // const logOut = () => {
+  //   signOut()
+  //   navigate('/login')
+  // }
+
   return (
     <Container>
       <LogoWrapper>
@@ -67,7 +75,12 @@ const Menu = () => {
 
         <Divisor />
 
-        <button>
+        <button
+        // onClick={(event) => {
+        //   event?.preventDefault()
+        //   logOut()
+        // }}
+        >
           <Exit />
           <CustomText fontWeight='500' $margintop='5px'>
             Sair
