@@ -29,7 +29,7 @@ const Login = () => {
       </Header>
 
       <Content>
-        <BuildingWrapper url='src/assets/building-image.svg'></BuildingWrapper>
+        <BuildingWrapper $url='src/assets/building-image.svg'></BuildingWrapper>
         <FormBox>
           <CustomText
             color={colors['blue/600']}

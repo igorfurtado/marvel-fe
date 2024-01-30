@@ -13,9 +13,9 @@ export const Container = styled.div`
 `
 
 export const Image = styled.div<{
-  url: string
+  $url: string
 }>`
-  background-image: url(${(props) => props.url});
+  background-image: url(${(props) => props.$url});
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;

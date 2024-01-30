@@ -9,7 +9,7 @@ const General = () => {
   return (
     <Container>
       <Image
-        url={`${selectedCharacter?.thumbnail.path}.${selectedCharacter?.thumbnail.extension}`}
+        $url={`${selectedCharacter?.thumbnail.path}.${selectedCharacter?.thumbnail.extension}`}
       />
 
       <TextWrapper>

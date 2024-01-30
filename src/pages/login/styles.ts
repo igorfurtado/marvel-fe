@@ -32,12 +32,12 @@ export const Content = styled.div`
 `
 
 export const BuildingWrapper = styled.div<{
-  url: string
+  $url: string
 }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${(props) => props.url});
+  background-image: url(${(props) => props.$url});
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
