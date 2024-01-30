@@ -12,6 +12,7 @@ type CustomInputProps = {
   $control?: Control<UserLogin, any>
   placeHolder?: string
   $login?: boolean
+  $reset?: boolean
   type?: React.HTMLInputTypeAttribute | undefined
   errorText?: string
   pureValue?: string
@@ -25,8 +26,10 @@ const CustomInput = ({
   name,
   placeHolder,
   $login,
+  $reset,
   type,
   pureValue,
+  errorText,
   iconClick,
   pureOnChange
 }: CustomInputProps) => {
@@ -55,11 +58,12 @@ const CustomInput = ({
           onChange={pureOnChange}
           value={pureValue}
           placeHolder={placeHolder}
-          $login={$login}
+          $login={$reset}
           type={type}
           iconClick={iconClick}
           IconAfter={IconAfter}
           IconBefore={IconBefore}
+          errorText={errorText}
         />
       )}
     </>

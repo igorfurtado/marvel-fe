@@ -6,6 +6,7 @@ import { Eye } from '@/components/icons/eye'
 import { Next } from '@/components/icons/next'
 import { colors } from '@/styles/references'
 
+import { useState } from 'react'
 import useFormView from './hooks/use-form'
 import {
   BuildingWrapper,
@@ -16,11 +17,10 @@ import {
   FormBox,
   Header
 } from './styles'
-import { useState } from 'react'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
-  const { control, handleSubmit, onSubmit } = useFormView()
+  const { control, handleSubmit, onSubmit, navigate } = useFormView()
 
   return (
     <Container>
@@ -78,7 +78,7 @@ const Login = () => {
             <Button title='entrar' iconAfter={Next} />
           </Form>
           <ForgotPasswordBox>
-            <button>
+            <button onClick={() => navigate('/reset-password')}>
               <Doubt />
               <CustomText fontSize='11px' color='#F21A05' fontWeight='400'>
                 Esqueceu a senha?

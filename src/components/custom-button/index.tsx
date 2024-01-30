@@ -7,17 +7,19 @@ type ButtonProps = {
   disabled?: boolean
   iconBefore?: ElementType | null
   iconAfter?: ElementType | null
+  onClick?: () => void
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button = ({
   title,
   disabled,
   iconBefore: IconBefore,
-  iconAfter: IconAfter
+  iconAfter: IconAfter,
+  onClick
 }: ButtonProps) => {
   return (
     <Container disabled={disabled}>
-      <StyledButton disabled={disabled}>
+      <StyledButton disabled={disabled} onClick={onClick}>
         {IconBefore && <IconBefore />}
         {title}
         {IconAfter && <IconAfter />}

@@ -51,7 +51,7 @@ const useFormView = () => {
 
   const clearForm = () => reset()
 
-  return { control, clearForm, handleSubmit, onSubmit }
+  return { control, clearForm, handleSubmit, onSubmit, navigate }
 }
 
 export default useFormView

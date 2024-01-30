@@ -35,6 +35,7 @@ export const StyledButton = styled.button`
   font-size: 1.5rem;
   font-weight: 700;
   white-space: nowrap;
+  transition: all 0.3s ease-out;
 
   ${({ disabled }) =>
     disabled &&
