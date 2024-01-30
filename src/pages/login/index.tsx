@@ -5,10 +5,8 @@ import { Doubt } from '@/components/icons/doubt'
 import { Eye } from '@/components/icons/eye'
 import { Next } from '@/components/icons/next'
 import { colors } from '@/styles/references'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
-import useLogin from '@/hooks/use-login'
+import useFormView from './hooks/use-form'
 import {
   BuildingWrapper,
   Container,
@@ -18,18 +16,11 @@ import {
   FormBox,
   Header
 } from './styles'
+import { useState } from 'react'
 
 const Login = () => {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
   const [showPassword, setShowPassword] = useState<boolean>(false)
-  const { signIn } = useLogin()
-  const navigate = useNavigate()
-
-  const login = () => {
-    signIn({ email, password })
-    navigate('/home')
-  }
+  const { control, handleSubmit, onSubmit } = useFormView()
 
   return (
     <Container>
@@ -62,23 +53,18 @@ const Login = () => {
             informe as suas credenciais de acesso ao portal
           </CustomText>
 
-          <Form
-            onSubmit={(event) => {
-              event?.preventDefault()
-              login()
-            }}
-          >
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <CustomInput
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                name='email'
+                $control={control}
                 placeHolder='nome@email.com'
                 $login
               />
 
               <CustomInput
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                name='password'
+                $control={control}
                 placeHolder='Informe sua senha'
                 $login
                 IconAfter={() => <Eye />}

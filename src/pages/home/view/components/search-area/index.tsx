@@ -17,8 +17,8 @@ const SearchArea = ({ onChange, value }: SearchAreaProps) => {
         <CustomInput
           IconBefore={Search}
           placeHolder='Busque um agente'
-          onChange={onChange}
-          value={value}
+          pureOnChange={onChange}
+          pureValue={value}
         />
       )}
     </Container>

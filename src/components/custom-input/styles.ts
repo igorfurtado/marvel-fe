@@ -75,6 +75,6 @@ export const InputIcon = styled.div`
 export const ErrorText = styled.div`
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 `
