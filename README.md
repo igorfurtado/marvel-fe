@@ -16,7 +16,7 @@ Aplicação criada com ReactJs com as seguintes rotas:
 | --------------- | ---------------------------------------------------------------- |
 | White           | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF |
 | Black           | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
-| Dvider          | ![#EBEFF2](https://via.placeholder.com/10/EBEFF2?text=+) #EBEFF2 |
+| Divider          | ![#EBEFF2](https://via.placeholder.com/10/EBEFF2?text=+) #EBEFF2 |
 | Blue/800        | ![#00113D](https://via.placeholder.com/10/00113D?text=+) #00113D |
 | Blue/600        | ![#213770](https://via.placeholder.com/10/213770?text=+) #213770 |
 | Blue/200        | ![#747D94](https://via.placeholder.com/10/747D94?text=+) #747D94 |
@@ -33,7 +33,7 @@ Inter.
 
 ## Referência
 
-Esse projeto foi elaborado baseado em uma interface fornecidade pela empresa Pontua.
+Esse projeto foi elaborado baseado em uma interface fornecida pela empresa Pontua.
 
 - [Pontua](https://pontua.com.br/)
 
@@ -43,7 +43,7 @@ ReactJs + Typescript
 
 ## Documentação
 
-A aplicação foi criada com sistema de rotas utilizando o `reat-router-dom`.
+A aplicação foi criada com sistema de rotas utilizando o `react-router-dom`.
 
 A tela de login pode ser acessada na rota `/login`. Para que o usuário realize um login, deve inserir um email válido (validado por meio de uma regex com `react-hook-form` e `zod`) e também uma senha (pode ser qualquer valor diferente de vazio).
 
@@ -61,7 +61,7 @@ A tela inicial é dividida em duas seções, sendo a primeira delas a Home, onde
 
 Caso o usuário tente acessar a seção perfil tem antes ter selecionado um herói, receberá um aviso informando que sobre a necessidade de seleção de um herói.
 
-Caso as buscas feitas pelos usuários no campo de filtro não retornem alguma respotas, uma mensagem será retornada ao usuário.
+Caso as buscas feitas pelos usuários no campo de filtro não retornem alguma respostas, uma mensagem será retornada ao usuário.
 
 ## Sobre arquitetura e libs
 
