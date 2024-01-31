@@ -6,7 +6,7 @@ import { CharacterResponse } from '../application/value-objects/character-data'
 export default class CharacterApiDataAccess implements CharactersDataAccess {
   private readonly _apiKey: string
   constructor() {
-    this._apiKey = '16fa3d9a1578b7d9f8e8d8039714c9af'
+    this._apiKey = import.meta.env.VITE_ACCESS_KEY
   }
 
   async getCharacters({
